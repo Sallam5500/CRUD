@@ -177,7 +177,7 @@ function updataData(i){
     
 }
 function updatData(){
-    addBtn.classList.replace('d-none','d-blocl');
+    addBtn.classList.replace('d-none','d-block'); // d-blocl ??? كثم المنوفية يعم
     updata.classList.replace('d-block','d-none');
     dataList[index].title = title.value;
     dataList[index].price = price.value;
