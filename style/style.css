@@ -1,0 +1,102 @@
+body{
+    background-color: #222;
+    color: #fff;
+    font-family: system-ui;
+}
+body::before, body::before{
+    content: "";
+    background-image: url(/style/overlay.png), linear-gradient(45deg, #6E436C 25%, #2A4584 75%);
+    background-size: 256px, cover;
+    background-position: center, center;
+    background-repeat: repeat, no-repeat;
+    display: block;
+    position: fixed;
+    bottom: -5vh;
+    left: -5vw;
+    width: 110vw;
+    height: 110vh;
+    pointer-events: none;
+    transform: scale(1);
+    z-index: -1;
+  
+}
+ p{
+    font-size: 20px;
+    
+ }
+.icon-r{
+    color: black;
+    transition: .5s;
+    font-size: bold;
+}
+.icon-r:hover{
+    color: rgb(199, 22, 22);
+    transform: scale(1.2);
+}
+.icon-e{
+    color: #111;
+    font-size: bold;
+    transition: .5s;
+}
+.icon-e:hover{
+    color: #040;
+    transform: scale(1.2);
+}
+input{
+    width: 100%;
+    height: 30px;
+    outline: none;
+    border: none;
+    background-color: #111;
+    margin: 4px 0;
+    border-radius: 4px;
+    padding: 4px;
+    color: #fff;
+}
+input:focus{
+    background-color: #000;
+    transform: scale(1.1);
+}
+.price input{
+width: 20%;
+}
+#total::before{
+content: "Total";
+padding: 10px;
+border-radius: 3px;
+border-radius: 0%;
+}
+.btn{
+    background-color: #470053;
+    transition: .5s;
+}
+.btn:hover{
+    background-color: #040;
+    letter-spacing: 1px;
+}
+.btn-d{
+    background-color: #470053;
+    transition: .5s;
+}
+.btn-d:hover{
+    background-color: #a00d02;
+    letter-spacing: 1px;
+}
+th,td{
+    padding: 8px;
+}
+
+table{
+    background-color:#222;
+}
+
+
+
+.w-60{
+    width: 80%;
+  
+    
+}
+.w-40{
+    width: 45%;
+}

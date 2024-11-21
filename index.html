@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+    <link rel="stylesheet" href="style/all.min.css">
+    <link rel="stylesheet" href="style/bootstrap.min.css">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <div class="crud py-5">
+        <div class="container ">
+            <div class="head text-center text-uppercase">
+                <h2>curd</h2>
+                <p>Product Mangment system</p>
+    
+            </div>
+            <div class="inputs  ">
+                 <input class="p-4" placeholder="Title" type="text" id="title">
+                 <div class="price ">
+                    <input class="p-4" onkeyup="getTotal()"  type="number" id="price" placeholder="price">
+                    <input class="p-4" onkeyup="getTotal()"  type="number" id="taxes" placeholder="taxes">
+                    <input class="p-4" onkeyup="getTotal()"  type="number" id="ads" placeholder="ads">
+                    <input class="p-4" onkeyup="getTotal()"  type="number" id="discount" placeholder="discount">
+                    <small id="total" class="bg-danger p-2 rounded-2"></small>
+                 </div>
+                 <input class="p-4" type="number" placeholder="count" id="count">
+                 <input class="p-4" type="text" placeholder="category" id="category">
+                <div>
+                    <button id="addBtn"  class="w-60 mt-2 mb-2 p-2 mx-auto h-25 border-0 btn pointer-event rounded-4 text-white d-block" onclick="Create()">Create</button>
+                    <button id="updata"  class="w-60 p-2 mt-2 mb-2  mx-auto  h-25 border-0 btn pointer-event rounded-4 text-white d-none" onclick="updatData()">UpData</button>
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+            <div class="outputs">
+                <div class="searchBlock">
+                    <input  type="text" class="p-4" id="searchInput" onkeyup="searchData()" placeholder="search">
+                    <div class="btnsearch d-flex justify-content-between ">
+                        <button onclick="getSearchMood(this.id)"  id="searchtitle" class="w-40 p-2 mt-2 btn rounded-4 border-0 text-white "> Search By Title</button>
+                        <button onclick="getSearchMood(this.id)" id="searchcategory" class="w-40 mt-2 btn p-2 rounded-4 border-0 text-white"> Search By category</button>
+                    </div>
+                </div>
+                <div id="deleteAll">
+                    
+                </div>
+                <table class="w-100 text-center mt-3 my-3 ">
+                    <tr class="text-uppercase border-bottom border-danger">
+                        <th>id</th>
+                        <th>title</th>
+                        <th>price</th>
+                        <th>taxes</th>
+                        <th>ads</th>
+                        <th>descount</th>
+                        <th>total</th>
+                        <th>category</th>
+                        <th>update</th>
+                        <th>delete</th>
+                    </tr>
+                    <tbody id="tbody">
+                     
+                       
+                       
+                    </tbody>
+                </table>
+            </div>
+    
+        </div>
+        </div>
+
+
+
+
+
+
+
+<script src="JS/bootstrap.bundle.min.js"></script>
+    <script src="JS/index.js"></script>
+  
+</body>
+</html>
