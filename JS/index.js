@@ -96,11 +96,11 @@ function clearData(){
 }
 
 
-//display
-function showData(arr){
-    let table ="";
-    for( let i = 0; i < arr.length; i++){
-        table +=`
+
+// function to store product in variable and return it to reuse
+// this function take arr and i as a parameters
+function product(arr, i){
+    let prod = `
            <tr class="border-bottom border-dark">
                             <td>${i}</td>
                             <td>${arr[i].title}</td>
@@ -113,8 +113,17 @@ function showData(arr){
                             <td>${arr[i].category}</td>
                             <td><button class="rounded-5 text-white border-0" id="update"onclick="updataData(${i})"> <i class="icon-e fa-regular fa-pen-to-square"></i></button></td>
                             <td><button class="rounded-5 text-white  border-0" id="delete"onclick="deletData(${i})"><i class="icon-r fa-solid fa-trash-can"></i></button></td>
-                        </tr>`
+            </tr>`
+    return prod;
+}
+// *** product() == prod [return prod]
 
+//display
+function showData(arr){
+    let table ="";
+    for( let i = 0; i < arr.length; i++){
+        // *** product() == prod [return prod]
+        table += product(dataList, i);
     }
     document.getElementById('tbody').innerHTML = table;
     let btnDelet =document.getElementById("deleteAll");
@@ -193,28 +202,18 @@ function getSearchMood(id){
      searchMood = "category";
      search.placeholder = 'Search By category'
    }
-   search.focus()
+   search.focus();
+// To clearify search input and show the main data onclicking on any search btns   
+   search.value = null;
+   showData(dataList);
 }
 
 function searchData(value){
     let table = ``;
    for(let i = 0; i < dataList.length; i++){
     if(dataList[i][searchMood].toLowerCase().includes(searchInput.value.toLowerCase())){
-        table +=`
-            <tr class="border-bottom border-dark">
-                         <td>${i}</td>
-                         <td>${dataList[i].title}</td>
-                         <td>${dataList[i].price}</td>
-                         <td>${dataList[i].taxes}</td>
-                         <td>${dataList[i].ads}</td>
-                         <td>${dataList[i].discount}</td>
-                         <td>${dataList[i].total}</td>
-                   
-                         <td>${dataList[i].category}</td>
-                         <td><button class="rounded-5 text-white border-0" id="update"onclick="updataData(${i})"> <i class="icon-e fa-regular fa-pen-to-square"></i></button></td>
-                         <td><button class="rounded-5 text-white  border-0" id="delete"onclick="deletData(${i})"><i class="icon-r fa-solid fa-trash-can"></i></button></td>
-            </tr>
-        `
+        // *** product() == prod [return prod]
+        table += product(dataList, i);
     }
         document.getElementById('tbody').innerHTML = table;
    }
