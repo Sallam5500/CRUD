@@ -182,31 +182,55 @@ function updatData(){
 
 //search
 
-let searchMood = "tittle";
+let searchMood = "title";
 let search =document.getElementById('searchInput');
+
 function getSearchMood(id){
    if(id =='searchtitle'){
-    searchMood = "tittle";
+    searchMood = "title";
     search.placeholder = 'Search By Title'
    }else{
      searchMood = "category";
      search.placeholder = 'Search By category'
    }
    search.focus()
-
 }
 
-function searchData(){
-   let searchArr =[];
+function searchData(value){
+    let table = ``;
    for(let i = 0; i < dataList.length; i++){
-    if(dataList[i].title.toLowerCase().includes(searchInput.value.toLowerCase())){
-        searchArr.push(dataList[i])
-        
+    if(dataList[i][searchMood].toLowerCase().includes(searchInput.value.toLowerCase())){
+        table +=`
+            <tr class="border-bottom border-dark">
+                         <td>${i}</td>
+                         <td>${dataList[i].title}</td>
+                         <td>${dataList[i].price}</td>
+                         <td>${dataList[i].taxes}</td>
+                         <td>${dataList[i].ads}</td>
+                         <td>${dataList[i].discount}</td>
+                         <td>${dataList[i].total}</td>
+                   
+                         <td>${dataList[i].category}</td>
+                         <td><button class="rounded-5 text-white border-0" id="update"onclick="updataData(${i})"> <i class="icon-e fa-regular fa-pen-to-square"></i></button></td>
+                         <td><button class="rounded-5 text-white  border-0" id="delete"onclick="deletData(${i})"><i class="icon-r fa-solid fa-trash-can"></i></button></td>
+            </tr>
+        `
     }
+        document.getElementById('tbody').innerHTML = table;
    }
-
-   showData(searchArr);
 }
+
+// function searchData(){
+//    let searchArr =[];
+//    for(let i = 0; i < dataList.length; i++){
+//     if(dataList[i].title.toLowerCase().includes(searchInput.value.toLowerCase())){
+//         searchArr.push(dataList[i])
+        
+//     }
+//    }
+
+//    showData(searchArr);
+// }
 
 
 

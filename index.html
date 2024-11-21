@@ -42,7 +42,7 @@
 
             <div class="outputs">
                 <div class="searchBlock">
-                    <input  type="text" class="p-4" id="searchInput" onkeyup="searchData()" placeholder="search">
+                    <input  type="text" class="p-4" id="searchInput" oninput="searchData(this.value)" placeholder="search">
                     <div class="btnsearch d-flex justify-content-between ">
                         <button onclick="getSearchMood(this.id)"  id="searchtitle" class="w-40 p-2 mt-2 btn rounded-4 border-0 text-white "> Search By Title</button>
                         <button onclick="getSearchMood(this.id)" id="searchcategory" class="w-40 mt-2 btn p-2 rounded-4 border-0 text-white"> Search By category</button>
